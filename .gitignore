@@ -25,7 +25,8 @@ logs/
 *.mp4
 *.wav
 !demo/
-!demo/*.mp4
+demo/*.mp4
+!demo/*_preview.mp4
 
 # Model/checkpoint folders
 checkpoints/

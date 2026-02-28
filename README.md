@@ -5,6 +5,12 @@
 <h1 align="center">SyncBridge AI</h1>
 <p align="center">Clean Kannada → Hindi dubbing pipeline with translation, neural TTS, lip-sync, and optional enhancement.</p>
 
+<p align="center">
+	<a href="https://github.com/deimon999/SyncBridge-AI"><img src="https://img.shields.io/badge/Repo-SyncBridge--AI-111827?style=for-the-badge&logo=github" alt="Repository" /></a>
+	<img src="https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+	<img src="https://img.shields.io/badge/Status-Active-16A34A?style=for-the-badge" alt="Status" />
+</p>
+
 ---
 
 ## ✨ Highlights
@@ -26,6 +32,24 @@
 7. Wav2Lip lip-sync
 8. Optional GFPGAN + RealESRGAN enhancement
 9. Final mux + encode
+
+## 🗺️ Architecture
+
+```mermaid
+flowchart LR
+	A[Input Video] --> B[Clip + Normalize]
+	B --> C[Whisper ASR<br/>Kannada]
+	C --> D[IndicTrans2<br/>Kannada → Hindi]
+	D --> E[XTTS<br/>Hindi Speech]
+	E --> F[Audio Align]
+	F --> G[Wav2Lip]
+	G --> H{Enhancement?}
+	H -->|Yes| I[GFPGAN + RealESRGAN]
+	H -->|No| J[Skip]
+	I --> K[Final Mux]
+	J --> K[Final Mux]
+	K --> L[outputs/<run_id>/final.mp4]
+```
 
 ## 📦 Installation
 

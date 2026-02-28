@@ -131,6 +131,20 @@ If GFPGAN is unavailable, pipeline falls back gracefully to non-enhanced output.
 - Main result: `outputs/<run_id>/final.mp4`
 - Intermediate artifacts are saved inside `outputs/<run_id>/`
 
+## 🎬 Demo Videos (1 minute)
+
+### Original Kannada Clip
+
+<video src="demo/kannada_original_1min.mp4" controls width="760"></video>
+
+Direct file: [demo/kannada_original_1min.mp4](demo/kannada_original_1min.mp4)
+
+### Hindi Dubbed Clip
+
+<video src="demo/hindi_dubbed_1min.mp4" controls width="760"></video>
+
+Direct file: [demo/hindi_dubbed_1min.mp4](demo/hindi_dubbed_1min.mp4)
+
 ---
 
 Built for rapid multilingual dubbing experiments with practical quality controls.

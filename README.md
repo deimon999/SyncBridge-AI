@@ -53,11 +53,69 @@ flowchart LR
 
 ## 📦 Installation
 
+### 1) Clone and enter project
+
+```bash
+git clone https://github.com/deimon999/SyncBridge-AI.git
+cd SyncBridge-AI
+```
+
+### 2) Create Python environment
+
+```bash
+python -m venv .venv
+# Windows PowerShell
+.venv\Scripts\Activate.ps1
+# macOS/Linux
+# source .venv/bin/activate
+```
+
+### 3) Install Python packages
+
 ```bash
 pip install -r requirements.txt
 ```
 
-Ensure `ffmpeg` and `ffprobe` are installed and available in PATH.
+### 4) Install system tools
+
+- Install `ffmpeg` + `ffprobe` and make sure both are available in `PATH`.
+
+### 5) Add model repos/checkpoints
+
+```bash
+git clone https://github.com/Rudrabha/Wav2Lip.git Wav2Lip
+mkdir -p checkpoints
+# place wav2lip_gan.pth in ./checkpoints/
+
+# optional enhancement stage
+git clone https://github.com/TencentARC/GFPGAN.git GFPGAN
+```
+
+Expected required checkpoint path: `./checkpoints/wav2lip_gan.pth`
+
+## 🧾 Dependencies (Complete)
+
+### Python dependencies (`requirements.txt`)
+
+- `edge-tts`
+- `openai-whisper`
+- `torch`
+- `transformers`
+- `sentencepiece`
+- `sacremoses`
+- `IndicTransToolkit` (installed via Git URL)
+- Optional quality stage: `gfpgan`, `realesrgan`
+
+### Non-Python runtime dependencies
+
+- `ffmpeg`
+- `ffprobe`
+
+### External model/code dependencies
+
+- Local `Wav2Lip` repository
+- `wav2lip_gan.pth` checkpoint in `checkpoints/`
+- Optional local `GFPGAN` repository
 
 ## 🚀 Quick Start
 
@@ -125,6 +183,42 @@ git clone https://github.com/TencentARC/GFPGAN.git GFPGAN
 ```
 
 If GFPGAN is unavailable, pipeline falls back gracefully to non-enhanced output.
+
+## 💰 Estimated Cost Per Minute (When Scaled)
+
+This pipeline runs mostly on local/open models; at scale, cost is dominated by GPU/compute infrastructure and storage/egress rather than API token fees.
+
+Assumptions for rough planning:
+
+- 1x GPU worker around `$1.00/hour` effective blended cost (instance + overhead)
+- End-to-end processing speed between `0.6x` and `1.0x` real-time
+- Storage + transfer overhead around `$0.01–$0.03` per output minute
+
+Estimated compute cost per input minute:
+
+- At `1.0x` RT: about `$0.0167/min` compute
+- At `0.6x` RT: about `$0.0278/min` compute
+- With overhead: roughly **`$0.03–$0.06 per processed video minute`**
+
+> Note: this is an infrastructure estimate, not a vendor quote. Actual cost depends on GPU type, batching, autoscaling efficiency, and whether enhancement is enabled.
+
+## ⚠️ Known Limitations
+
+- Single source/target path is hardcoded for Kannada → Hindi in current stage configuration.
+- TTS uses a fixed Hindi neural voice (no speaker identity cloning/preservation).
+- Audio alignment uses global tempo adjustment, which may reduce natural prosody on difficult clips.
+- Wav2Lip and GFPGAN require separate local repos/checkpoints and can fail if not prepared correctly.
+- Enhancement quality and runtime vary significantly by input resolution, compression, and face visibility.
+- No built-in diarization, subtitle timing output, or speaker-level editing controls.
+
+## 🛠️ What I’d Improve With More Time
+
+- Add a single setup script to auto-install model repos/checkpoints and validate environment.
+- Add caching for model loads and intermediate artifacts to reduce rerun cost and latency.
+- Introduce segmentation + chunk-level alignment for more natural long-form dubbing.
+- Add multi-speaker support with diarization and speaker-consistent voice assignment.
+- Add objective quality metrics (WER/TER, sync drift) and regression test clips.
+- Package as a service (queue + worker + API) with autoscaling and observability dashboards.
 
 ## 📁 Output
 

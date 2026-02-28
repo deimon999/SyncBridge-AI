@@ -1,0 +1,11 @@
+edge-tts
+openai-whisper
+torch
+transformers
+sentencepiece
+sacremoses
+git+https://github.com/VarunGumma/IndicTransToolkit.git
+
+# Optional but recommended for video quality enhancement
+gfpgan
+realesrgan

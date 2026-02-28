@@ -1,0 +1,35 @@
+<svg width="1400" height="420" viewBox="0 0 1400 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1400" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#1E293B"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="220" y1="110" x2="1120" y2="300" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22D3EE"/>
+      <stop offset="1" stop-color="#A78BFA"/>
+    </linearGradient>
+    <filter id="blur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="24"/>
+    </filter>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="10" stdDeviation="8" flood-color="#000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="420" rx="28" fill="url(#bg)"/>
+
+  <circle cx="220" cy="80" r="120" fill="#22D3EE" opacity="0.22" filter="url(#blur)"/>
+  <circle cx="1220" cy="340" r="130" fill="#A78BFA" opacity="0.18" filter="url(#blur)"/>
+
+  <g filter="url(#shadow)">
+    <rect x="140" y="82" width="1120" height="250" rx="28" fill="url(#accent)" opacity="0.10"/>
+    <rect x="150" y="92" width="1100" height="230" rx="24" fill="#0B1220" stroke="url(#accent)" stroke-opacity="0.45"/>
+  </g>
+
+  <text x="700" y="175" text-anchor="middle" fill="#111827" opacity="0.55" font-size="96" font-family="Segoe UI, Inter, Arial" font-weight="900" letter-spacing="2">SYNCBRIDGE AI</text>
+  <text x="700" y="163" text-anchor="middle" fill="url(#accent)" font-size="96" font-family="Segoe UI, Inter, Arial" font-weight="900" letter-spacing="2">SYNCBRIDGE AI</text>
+
+  <text x="700" y="235" text-anchor="middle" fill="#CBD5E1" font-size="30" font-family="Segoe UI, Inter, Arial" font-weight="600">Kannada → Hindi Dubbing Pipeline with Lip-Sync + Enhancement</text>
+
+  <text x="700" y="292" text-anchor="middle" fill="#94A3B8" font-size="22" font-family="Segoe UI, Inter, Arial">ASR • Translation • Neural TTS • Wav2Lip • GFPGAN</text>
+</svg>

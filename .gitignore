@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Jupyter / notebooks
+.ipynb_checkpoints/
+
+# Local outputs and artifacts
+outputs/
+temp/
+logs/
+*.mp4
+*.wav
+
+# Model/checkpoint folders
+checkpoints/
+Wav2Lip/
+GFPGAN/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

@@ -141,9 +141,9 @@ Full video (MP4): [demo/kannada_original_preview.mp4](demo/kannada_original_prev
 
 ### Hindi Dubbed Clip
 
-![Hindi Dubbed Preview](demo/hindi_dubbed_preview.gif)
+![Hindi Dubbed Preview](demo/dub_video_preview.gif)
 
-Full video (MP4): [demo/hindi_dubbed_preview.mp4](demo/hindi_dubbed_preview.mp4)
+Full video (MP4): [demo/dub_video_preview.mp4](demo/dub_video_preview.mp4)
 
 ---
 

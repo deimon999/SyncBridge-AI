@@ -135,15 +135,15 @@ If GFPGAN is unavailable, pipeline falls back gracefully to non-enhanced output.
 
 ### Original Kannada Clip
 
-<video src="demo/kannada_original_preview.mp4" controls width="760"></video>
+![Original Kannada Preview](demo/kannada_original_preview.gif)
 
-Direct file: [demo/kannada_original_preview.mp4](demo/kannada_original_preview.mp4)
+Full video (MP4): [demo/kannada_original_preview.mp4](demo/kannada_original_preview.mp4)
 
 ### Hindi Dubbed Clip
 
-<video src="demo/hindi_dubbed_preview.mp4" controls width="760"></video>
+![Hindi Dubbed Preview](demo/hindi_dubbed_preview.gif)
 
-Direct file: [demo/hindi_dubbed_preview.mp4](demo/hindi_dubbed_preview.mp4)
+Full video (MP4): [demo/hindi_dubbed_preview.mp4](demo/hindi_dubbed_preview.mp4)
 
 ---
 
